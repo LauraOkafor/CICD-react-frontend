@@ -57,5 +57,5 @@ jobs:
             sudo apt install nginx -y
             echo "Successful Nginx Installation"
             sudo systemctl start nginx
-            sudo cp -r dist/* /var/www/html
+            sudo cp -r /home/ubuntu/dist/* /var/www/html
             sudo systemctl restart nginx
