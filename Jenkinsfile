@@ -12,7 +12,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'jenkins', url: 'https://github.com/soundn/CICD-react-frontend.git'
+                git branch: 'jenkins', url: 'https://github.com/LauraOkafor/CICD-react-frontend.git'
             }
         }
         
@@ -43,7 +43,7 @@ pipeline {
         
         stage('Deploy') {
             steps {
-                sshagent(credentials: ['ssh-credential-id']) {
+                sshagent(credentials: ['EC2_SSH_KEY']) {
                     sh '''
                         mkdir -p ~/.ssh
                         ssh-keyscan -H 51.20.93.71 >> ~/.ssh/known_hosts
